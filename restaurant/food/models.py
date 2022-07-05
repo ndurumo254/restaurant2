@@ -13,12 +13,15 @@ class Item(models.Model):
     slug= models.SlugField(blank=True,null= True)
 
 
-def save(self, *args,**kwargs):
-    if not self.slug and self.name:
-        self.slugify(self.name)
-    super(Item, self).save(**args , **kwargs)
+    def save(self , *args ,**kwargs):
+        if not self.slug and self.name:
+            self.slug=slugify(self.name)
+        super(Item, self).save(*args , **kwargs)
 
-
+#adding meta to correct spelling
+    class Meta: 
+        verbose_name = "Item"
+        verbose_name_plural = "Items"
 
     def __str__(self):
         return self.name
