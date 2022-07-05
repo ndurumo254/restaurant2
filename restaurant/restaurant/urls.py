@@ -18,9 +18,11 @@ from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
 
+import food
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-     path('', include('food.urls')),
+    path('food/', include('food.urls', namespace='food')),
 ]
 
 
