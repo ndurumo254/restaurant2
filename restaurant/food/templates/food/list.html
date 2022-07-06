@@ -1,6 +1,6 @@
 <body>
     <h1>Testing the class page backend</h1>
-    {% for Item in list_food %}
-    <h2><a href="{% url 'food:food_detail' Item.slug % }">{{ Item }}</a></h2>
+    {% for food in list_food %}
+    <h2><a href="{% url 'food:food_detail' Item.pk %}">{{ food}}</a></h2>   
     {% endfor %}        
   </body> 
