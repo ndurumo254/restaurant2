@@ -15,7 +15,7 @@ def list_food(request):
 def food_detail(request , slug):
     food_detail= Item.objects.get(slug=slug)
     context= {
-        'food_detail' :food_detail
+        'food_detail':food_detail
         
     }
     return render(request,'food/detail.html' , context )
